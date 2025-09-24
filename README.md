@@ -3,7 +3,7 @@
 Modern Chessbots are neural network based AI's that approach moves based on highest probability application. Or in otherwords, they will import the current board instance and color they're playing to calculate the next best move.
 
 Framework v1:
-- Board data format for easy AI digestion.
+- Board data format for easy AI digestion. (use 5 bit binary formatting for encoding) first 2 bits for black and white, last 3 bits for piece type.
 - Neural network incorperating of a five move plan based on heighest probability of moves on both sides of the board.
 
 To do:
