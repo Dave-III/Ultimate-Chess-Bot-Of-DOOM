@@ -1,4 +1,4 @@
-import constants.py as constants
+import constants.py as const
 
 class ChessBoard:
     def __init__(self):
@@ -42,7 +42,7 @@ class ChessBoard:
         # Iterate through each row and piece to build the nested list.
         for row in self.board:
             for piece in row:
-                board.append(self.PIECE_INDEX[piece])
+                board.append(const.PIECE_INDEX[piece])
                     
         return board
     
@@ -56,7 +56,7 @@ class ChessBoard:
         
         # Get the piece at the specified position and return its name
         piece = self.board[row][col]
-        return self.PIECE_MAP[piece]
+        return const.PIECE_MAP[piece]
 
     def board_to_FEN(self):
         # Convert the board to Forsyth-Edwards Notation (FEN)
