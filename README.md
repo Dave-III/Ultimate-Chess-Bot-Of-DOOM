@@ -13,3 +13,28 @@ To do:
 - Generate a format to convert a player move into digestible data.
 
 All player input and visualization can be handled later.
+
+framework for filing our code:
+
+│
+├── main.py              # Entry point (runs the bot / plays games)
+│
+├── board/
+│   ├── chess_board.py   # Your ChessBoard class (board state, FEN, display)
+│   ├── move.py          # Move class (start, end, captured, promotion, etc.)
+│   └── fen.py           # Optional: helper functions for FEN parsing
+│
+├── engine/
+│   ├── move_generator.py # Generates pseudo-legal moves
+│   ├── validator.py      # Checks legality (e.g., king in check)
+│   ├── search.py         # Minimax, alpha-beta, or MCTS
+│   └── evaluation.py     # Hooks into neural net or classical eval
+│
+├── nn/
+│   ├── model.py          # Neural network definition (PyTorch or custom)
+│   ├── trainer.py        # Training loop, dataset handling
+│   └── encode.py         # Encode board state → NN input tensor
+│
+└── utils/
+    ├── constants.py      # Piece maps, square colors, etc. (currently in ChessBoard)
+    └── helpers.py        # Debugging, logging, timing, etc.

@@ -1,14 +1,6 @@
-class ChessBoard:
-    #dictionary used for returning piece names
-    PIECE_MAP = {' ': "EMPTY", 'R': "WHITE_ROOK",'N': "WHITE_KNIGHT",'B': "WHITE_BISHOP",'Q': "WHITE_QUEEN",
-                 'K': "WHITE_KING",'P': "WHITE_PAWN",'r': "BLACK_ROOK",'n': "BLACK_KNIGHT",
-                 'b': "BLACK_BISHOP",'q': "BLACK_QUEEN",'k': "BLACK_KING",'p': "BLACK_PAWN"}
+import constants.py as constants
 
-    #dictionary used for returning piece indices represented in binary format (1st digit is color, 2-4 is piece type)
-    PIECE_INDEX = {' ': [0,0,0,0],'R': [0,0,0,1],'N': [0,0,1,0],'B': [0,0,1,1],'Q': [0,1,0,0],
-                   'K': [0,1,0,1],'P': [0,1,1,0],'r': [1,0,0,0],'n': [1,0,0,1],'b': [1,0,1,0],
-                   'q': [1,0,1,1],'k': [1,1,0,0],'p': [1,1,0,1]}
-    
+class ChessBoard:
     def __init__(self):
         self.board = self.create_initial_board()
 
@@ -84,6 +76,7 @@ class ChessBoard:
             fen += '/'
         return fen[:-1]  # Remove the trailing '/'
     
+
 
 # Example usage
 if __name__ == "__main__":
