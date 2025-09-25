@@ -4,10 +4,10 @@ class ChessBoard:
                  'K': "WHITE_KING",'P': "WHITE_PAWN",'r': "BLACK_ROOK",'n': "BLACK_KNIGHT",
                  'b': "BLACK_BISHOP",'q': "BLACK_QUEEN",'k': "BLACK_KING",'p': "BLACK_PAWN"}
 
-    #dictionary used for board state representation
-    PIECE_INDEX = {' ': "0",'R': "1",'N': "2",'B': "3",'Q': "4",
-                   'K': "5",'P': "6",'r': "7",'n': "8",
-                   'b': "9",'q': "10",'k': "11",'p': "12"}
+    #dictionary used for returning piece indices represented in binary format (1st digit is color, 2-4 is piece type)
+    PIECE_INDEX = {' ': [0,0,0,0],'R': [0,0,0,1],'N': [0,0,1,0],'B': [0,0,1,1],'Q': [0,1,0,0],
+                   'K': [0,1,0,1],'P': [0,1,1,0],'r': [1,0,0,0],'n': [1,0,0,1],'b': [1,0,1,0],
+                   'q': [1,0,1,1],'k': [1,1,0,0],'p': [1,1,0,1]}
     
     def __init__(self):
         self.board = self.create_initial_board()
@@ -45,14 +45,13 @@ class ChessBoard:
     def board_state(self):
 
         # Create a string representation of the board using piece indices
-        board = ""
+        board = []
 
-        # Iterate through each row and piece to build the string
+        # Iterate through each row and piece to build the nested list.
         for row in self.board:
             for piece in row:
-                board += self.PIECE_INDEX[piece]
-                board += " "
-        
+                board.append(self.PIECE_INDEX[piece])
+                    
         return board
     
     def return_position(self, position):
