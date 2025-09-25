@@ -27,7 +27,7 @@ framework for filing our code:
 ├── engine/
 │   ├── move_generator.py # Generates pseudo-legal moves
 │   ├── validator.py      # Checks legality (e.g., king in check)
-│   ├── search.py         # Minimax, alpha-beta, or MCTS
+│   ├── search.py         # For Terrie to work on
 │   └── evaluation.py     # Hooks into neural net or classical eval
 │
 ├── nn/
@@ -36,5 +36,5 @@ framework for filing our code:
 │   └── encode.py         # Encode board state → NN input tensor
 │
 └── utils/
-    ├── constants.py      # Piece maps, square colors, etc. (currently in ChessBoard)
+    ├── constants.py      # Piece maps, square colors, etc.
     └── helpers.py        # Debugging, logging, timing, etc.
