@@ -1,4 +1,4 @@
-import constants as const
+from utils import constants as const
 
 class ChessBoard:
     def __init__(self):
