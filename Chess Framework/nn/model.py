@@ -4,6 +4,7 @@ from utils import constants as const
 
 class ChessModel(nn.Module):
     def __init__(self):
+        # Initialize the neural network model using PyTorch's nn.Module as a superclass
         super().__init__()
         # Define the neural network layers
 
